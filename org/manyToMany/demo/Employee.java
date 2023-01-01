@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -20,9 +21,10 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int employeeId;
 	private String employeeName;
-	@OneToMany
-	@JoinTable(name="USER_VEHICLE",joinColumns =@JoinColumn(name="USER_ID"),
-				inverseJoinColumns = @JoinColumn(name="VEHICLE_ID")
+	@ManyToMany
+	@JoinTable(name="EV_TABLE",
+				joinColumns = @JoinColumn(name="Employee_Id"),
+				inverseJoinColumns = @JoinColumn(name="Vehicle_Id")
 			)
 	private Collection<Vehicle> vehicle= new ArrayList<>();
 	

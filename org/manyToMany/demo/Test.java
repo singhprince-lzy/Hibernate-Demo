@@ -23,8 +23,8 @@ public class Test {
 		user.getVehicle().add(v1);
 		user.getVehicle().add(v);
 		
-		v.setEmp(user);
-		v1.setEmp(user);
+		v.getEmp().add(user);
+		v1.getEmp().add(user);
 		
 		
 		

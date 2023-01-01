@@ -34,8 +34,8 @@
        <!--  <mapping class="org.thebest.prince.dto.People"/>
         <mapping class="org.thebest.prince.dto.Vehicle"/> -->
         
-        <mapping class="org.oneToMany.demo.Employee"/>
-        <mapping class="org.oneToMany.demo.Vehicle"/>
+        <mapping class="org.manyToMany.demo.Employee"/>
+        <mapping class="org.manyToMany.demo.Vehicle"/>
         
 
     </session-factory>

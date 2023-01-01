@@ -1,5 +1,8 @@
 package org.manyToMany.demo;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,8 +11,8 @@ public class Vehicle {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int vId;
 	private String vName;
-	@ManyToOne
-	private Employee emp;
+	@ManyToMany(mappedBy = "vehicle")
+	private Collection<Employee> emp= new ArrayList();
 	
 	
 	
@@ -20,14 +23,15 @@ public class Vehicle {
 //		this.vId = vId;
 //	}
 	
-	public Employee getEmp() {
-		return emp;
-	}
-	public void setEmp(Employee emp) {
-		this.emp = emp;
-	}
+	
 	public String getvName() {
 		return vName;
+	}
+	public Collection<Employee> getEmp() {
+		return emp;
+	}
+	public void setEmp(Collection<Employee> emp) {
+		this.emp = emp;
 	}
 	public void setvName(String vName) {
 		this.vName = vName;
